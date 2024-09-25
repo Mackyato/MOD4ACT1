@@ -17,36 +17,17 @@ namespace Module0Exercise0.View
             MyLabel.Text = message;
         }
 
-        private async void OnLoginButtonClicked(object sender, EventArgs e)
-        {
-
-            string username = usernameEntry.Text;
-            string password = passwordEntry.Text;
-
-            // Simple validation (this can be replaced with actual authentication logic)
-            if (username == "admin" && password == "admin")
-            {
-                try
-                {
-                    if (Shell.Current != null)
-                    {
-                        await Shell.Current.GoToAsync(nameof(EmployeePage));
-                    }
-                    else
-                    {
-                        await DisplayAlert("Error", "Shell is not initialized.", "OK");
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    await DisplayAlert("Navigation Error", ex.Message, "OK");
-                }
-            }
-            else
-            {
-                await DisplayAlert("Login Failed", "Incorrect username or password.", "OK");
-            }
-        }
+         private async void OnLoginButtonClicked(object sender, EventArgs e)
+         {
+        
+             string username = usernameEntry.Text;
+             string password = passwordEntry.Text;
+        
+             
+             if (username == "admin" && password == "admin")
+             {
+                 Application.Current.MainPage = new NavigationPage(new EmployeePage());
+             }
+         }
     }
 }

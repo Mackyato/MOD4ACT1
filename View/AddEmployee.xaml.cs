@@ -48,45 +48,44 @@ public partial class AddEmployee : ContentPage
     }
     private async void OnGetLocationClicked(object sender, EventArgs e)
     {
-        try
-        {
-            var location = await Geolocation.GetLastKnownLocationAsync();
-            if (location == null)
-            {
-                location = await Geolocation.GetLocationAsync(new GeolocationRequest
-                {
-                    DesiredAccuracy = GeolocationAccuracy.High
-                });
-            }
-
-            if (location != null)
-            {
-                coordinatesLabel.Text = $"Latitude: {location.Latitude}, Longtitude: {location.Longitude}";
-
-                var placemarks = await Geocoding.Default.GetPlacemarksAsync(location.Latitude, location.Longitude);
-
-                var placemark = placemarks?.FirstOrDefault();
-
-                if (placemark != null)
-                {
-                    Municipality.Text = $"Municipality: {placemark.Locality}," +
-                        $"{placemark.AdminArea}";
-                }
-                else
-                {
-                    Municipality.Text = "Unable to determie the address";
-                }
-                //GEOCODING ENDS HERE
-
-            }
-            else
-            {
-                coordinatesLabel.Text = "Unable to get Location";
-            }
-        }
-        catch (Exception ex)
-        {
-            coordinatesLabel.Text = $"ERROR: {ex.Message}";
-        }
-    }
+	    try
+	    {
+	        var location = await Geolocation.GetLastKnownLocationAsync();
+	        if (location == null)
+	        {
+	            location = await Geolocation.GetLocationAsync(new GeolocationRequest
+	            {
+	                DesiredAccuracy = GeolocationAccuracy.High
+	            });
+	        }
+	
+	        if (location != null)
+	        {
+	            //LocationLabel.Text = $"Latitude: {location.Latitude}, Longitude: {location.Longitude}";
+	
+	            // Get Geocoding - Get address from Longitude and Latitude
+	            var placemarks = await Geocoding.Default.GetPlacemarksAsync(location.Latitude, location.Longitude);
+	            var placemark = placemarks?.FirstOrDefault();
+	
+	            if (placemark != null)
+	            {
+	                // Set the Municipality and Province entry fields
+	                Municipality.Text = placemark.Locality;
+	                Province.Text = placemark.AdminArea;
+	            }
+	            else
+	            {
+	                AddressLabel.Text = "Unable to determine the address";
+	            }
+	        }
+	        else
+	        {
+	            //LocationLabel.Text = "Unable to get location";
+	        }
+	    }
+	    catch (Exception ex)
+	    {
+	        //LocationLabel.Text = $"ERROR: {ex.Message}";
+	    }
+     }
 }

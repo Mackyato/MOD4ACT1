@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module0Exercise0.View.LoginPage"
+             Title="LoginPage"
+             BackgroundColor="#E0F7FA">
+    <VerticalStackLayout
+     VerticalOptions="CenterAndExpand"
+     HorizontalOptions="CenterAndExpand"
+     Spacing="20"
+     Padding="30">
+
+        <Label Text="Hello!!"
+            x:Name="MyLabel"
+            FontSize="32"
+            TextColor="#2E7D32"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="Center"/>
+
+    <Label 
+         Text="Login Page"
+         FontSize="36"
+         TextColor="#2E7D32"  
+            FontAttributes="Bold"
+         HorizontalOptions="Center" />
+
+     <Entry
+         x:Name="usernameEntry"
+         Placeholder="Username"
+         FontSize="18"
+         BackgroundColor="#C8E6C9"  
+         TextColor="#1B5E20"
+         HeightRequest="50"
+         Margin="0,10,0,0"
+         HorizontalOptions="FillAndExpand" />
+
+    <Entry
+         x:Name="passwordEntry"
+         Placeholder="Password"
+         IsPassword="True"
+         FontSize="18"
+         BackgroundColor="#C8E6C9"  
+         TextColor="#1B5E20"
+         HeightRequest="50"
+         Margin="0,10,0,0"
+         HorizontalOptions="FillAndExpand" />
+
+    <Button 
+         Text="Login"
+         FontSize="20"
+         TextColor="White"
+         BackgroundColor="#388E3C" 
+         HeightRequest="50"
+         Margin="0,20,0,0"
+         HorizontalOptions="FillAndExpand" 
+         Clicked="OnLoginButtonClicked" />
+
+
+<!-- Settings -->
+<StackLayout 
+         Orientation="Horizontal" 
+         HorizontalOptions="Center"
+         Spacing="15">
+
+    <Label 
+         Text="Forgot Password?"
+         TextColor="#388E3C" 
+         FontSize="14"
+         VerticalOptions="Center" />
+
+    <Label 
+         Text="Sign Up"
+         TextColor="#388E3C"
+         FontSize="14"
+         VerticalOptions="Center" />
+</StackLayout>
+
+    </VerticalStackLayout>
+
+
+</ContentPage>

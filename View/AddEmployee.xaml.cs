@@ -75,8 +75,9 @@ public partial class AddEmployee : ContentPage
 	            }
 	            else
 	            {
-	                AddressLabel.Text = "Unable to determine the address";
-	            }
+	                Municipality.Text = "Unable to determine the Municipality";
+                    Province.Text = "Unable to determine the Province";
+                }
 	        }
 	        else
 	        {

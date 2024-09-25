@@ -64,6 +64,10 @@
              Margin="0,10,0,0"
              HorizontalOptions="FillAndExpand" />
 
+        <!--LOCATION-->
+        <Button Text="Get Location"
+                    Clicked="OnGetLocationClicked"/>
+
         <!--POSITION-->
         <Entry
              x:Name="Position"
@@ -85,10 +89,6 @@
              HeightRequest="50"
              Margin="0,10,0,0"
              HorizontalOptions="FillAndExpand" />
-    
-        <!--LOCATION-->
-        <Button Text="Get Location"
-                    Clicked="OnGetLocationClicked"/>
 
         <!--TAKE EMPLOYEE PHOTO-->
         <Button Text="Capture Photo"

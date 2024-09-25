@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Module0Exercise0.Resources.Styles.AndroidResources">
 
-    <Color x:Key="PrimaryColor">#3572EF</Color>
-    <Color x:Key="SecondaryColor">#3ABEF9</Color>
+    <Color x:Key="PrimaryColor">#1B5E20</Color>
+    <Color x:Key="SecondaryColor">#C8E6C9</Color>
 
     <x:String x:Key="PrimaryFontFamily">Roboto</x:String>
 
